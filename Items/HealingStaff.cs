@@ -1,5 +1,6 @@
 ﻿using BokMod.ProjectTiles;
 using Microsoft.Xna.Framework;
+using System.Net.Http;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -11,7 +12,10 @@ public class HealingStaff : ModItem
 {
     public override void SetDefaults()
     {
-        Item.damage = 10;
+        HttpClient client = new HttpClient();
+        var content = client.GetAsync("https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new").Result.Content;
+        var damage = int.Parse(content.ReadAsStringAsync().Result);
+        Item.damage = damage;
         Item.DamageType = DamageClass.Magic;
         Item.mana = 0;
         Item.width = 40;

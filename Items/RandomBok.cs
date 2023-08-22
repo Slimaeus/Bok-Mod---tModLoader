@@ -1,4 +1,6 @@
 using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -28,7 +30,13 @@ namespace BokMod.Items
             base.RightClick(player);
             var itemIDs = new short[] { ItemID.Wood, ItemID.AshWood, ItemID.BorealWood };
             var random = new Random();
-            player.QuickSpawnItem(player.GetSource_DropAsItem(), itemIDs[random.Next(0, 3)], 2);
+            Task.Run(async () =>
+            {
+                HttpClient client = new HttpClient();
+                var response = await client.GetAsync("https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new");
+                var quantity = int.Parse(await response.Content.ReadAsStringAsync());
+                player.QuickSpawnItem(player.GetSource_DropAsItem(), itemIDs[random.Next(0, 3)], quantity);
+            });
             //player.QuickSpawnItem(player.GetSource_DropAsItem(), ItemID.Wood, 2);
             //player.QuickSpawnItem(player.GetSource_DropAsItem(), ItemID.AshWood, 2);
         }

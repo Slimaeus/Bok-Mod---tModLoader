@@ -19,5 +19,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Drops\" />
+    <Folder Include="Items\Boots\" />
+    <Folder Include="Items\Chestplates\" />
+    <Folder Include="Items\Helmets\" />
+    <Folder Include="Items\Weapons\" />
   </ItemGroup>
 </Project>
