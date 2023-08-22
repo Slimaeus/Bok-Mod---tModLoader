@@ -1,0 +1,25 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	RandomBok: {
+		DisplayName: Random Bok
+		Tooltip: This is Random Bok!
+	}
+
+	HealingStaff: {
+		DisplayName: Healing Staff
+		Tooltip: This staff can heal!
+	}
+
+	HealingBallProjectTile: {
+		DisplayName: Healing Ball
+		Tooltip: This is healing ball
+	}
+
+	GodSpeedBoot: {
+		DisplayName: God Speed Boot
+		Tooltip: This boot super fast
+	}
+}
+
+Projectiles.HealingBallProjectTile.DisplayName: Healing Ball Project Tile

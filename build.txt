@@ -1,0 +1,3 @@
+displayName = Bok Mod
+author = Slimaeus
+version = 0.2

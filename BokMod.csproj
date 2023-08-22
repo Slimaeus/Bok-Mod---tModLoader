@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>BokMod</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Accessories\GodSpeedBoot.png" />
+    <None Remove="Accessories\GodSpeedBoot_Shoes.png" />
+    <None Remove="Items\HealingStaff.png" />
+    <None Remove="Items\RandomBok.png" />
+    <None Remove="ProjectTiles\HealingBallProjectTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Drops\" />
+  </ItemGroup>
+</Project>
